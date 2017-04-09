@@ -1,7 +1,7 @@
 
 # rainbow [![NPM version][npm-status-image]][npm] [![Build Status][build-status-image]][travis] [![ESLint Config][eslint-config-image]][eslint-config]
 
->
+> String styling helpers.
 
 ## Installation
 
