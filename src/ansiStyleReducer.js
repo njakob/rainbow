@@ -17,7 +17,7 @@ const backgroundsMapping = {
 };
 
 function isString(value: mixed): boolean {
-  return value === 'string' || value instanceof String;
+  return typeof value === 'string' || value instanceof String;
 }
 
 export default function ansiStyleReducer(): StyleReducer {
