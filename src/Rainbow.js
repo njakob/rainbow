@@ -15,7 +15,7 @@ export default class Rainbow implements Styler {
   }
 
   format(values: Array<string>, ...keys: Array<mixed>): StyledString {
-    return parse(values, keys, value => this.styleReducer(value));
+    return parse(values, keys, this.styleReducer);
   }
 
   get black(): Styler {
