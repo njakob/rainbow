@@ -1,6 +1,6 @@
 {
   "name": "@njakob/rainbow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "String styling helpers",
   "author": "Nicolas Jakob <nicow.jakob@gmail.com>",
   "license": "MIT",
