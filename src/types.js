@@ -72,6 +72,6 @@ export interface Styler {
   get underline(): Styler;
 };
 
-export type Reducer = (styled: StyledString, value: mixed) => StyledString;
+export type StyleReducer = (styled: StyledString, value: mixed) => StyledString;
 
 export type StylerProperties = { [key: string]: Styler; };

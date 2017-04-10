@@ -1,21 +1,21 @@
 /* @flow */
 
-import type { Reducer, StyledString, Styler, StylerProperties } from './types';
+import type { StyleReducer, StyledString, Styler, StylerProperties } from './types';
 import createProperties from './createProperties';
 import parse from './parse';
 
 export default class Rainbow implements Styler {
-  reducer: Reducer;
+  styleReducer: StyleReducer;
   properties: StylerProperties;
 
-  constructor(reducer: Reducer) {
+  constructor(styleReducer: StyleReducer) {
     this.properties = createProperties();
     Object.defineProperties(this, this.properties);
-    this.reducer = reducer;
+    this.styleReducer = styleReducer;
   }
 
   format(values: Array<string>, ...keys: Array<mixed>): StyledString {
-    return parse(values, keys, value => this.reducer(value));
+    return parse(values, keys, value => this.styleReducer(value));
   }
 
   get black(): Styler {

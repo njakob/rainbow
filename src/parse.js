@@ -1,11 +1,11 @@
 /* @flow */
 
-import type { StyledString, Reducer } from './types';
+import type { StyledString, StyleReducer } from './types';
 
 export default function parse(
   values: Array<string>,
   keys: Array<mixed>,
-  reducer: Reducer,
+  styleReducer: StyleReducer,
 ): StyledString {
   const length = values.length;
   const styled: StyledString = { value: '', attributes: [] };
@@ -14,7 +14,7 @@ export default function parse(
     styled.value += values[i];
 
     if (i !== length - 1) {
-      reducer(styled, keys[i]);
+      styleReducer(styled, keys[i]);
     }
   }
 
