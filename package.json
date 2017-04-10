@@ -34,6 +34,7 @@
     "logging",
     "command-line"
   ],
+  "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
     "build": "npm run clean && npm run build:sources && npm run build:flow",
