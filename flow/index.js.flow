@@ -1,0 +1,85 @@
+/* @flow */
+
+export type Style = {
+  background?: string;
+  color?: string;
+  decoration?: string;
+  hidden?: boolean;
+  inverse?: boolean;
+  style?: string;
+  weight?: string;
+}
+
+export type StyledString = {
+  attributes: Array<mixed>;
+  value: string;
+};
+
+export type StyleReducer = (styled: StyledString, value: mixed) => StyledString;
+
+declare export class StyleNode {
+  style: Style;
+  text: ?string;
+  constructor(otherText?: ?string, otherStyle?: Style): this;
+  assignStyle(other: Style): this;
+  setText(other: string): this;
+}
+
+export interface Styler {
+  (value: string): StyleNode;
+  get bgBlack(): Styler;
+  get bgBlue(): Styler;
+  get bgCyan(): Styler;
+  get bgGreen(): Styler;
+  get bgMagenta(): Styler;
+  get bgRed(): Styler;
+  get bgWhite(): Styler;
+  get bgYellow(): Styler;
+  get black(): Styler;
+  get blue(): Styler;
+  get bold(): Styler;
+  get cyan(): Styler;
+  get dim(): Styler;
+  get gray(): Styler;
+  get green(): Styler;
+  get hidden(): Styler;
+  get inverse(): Styler;
+  get italic(): Styler;
+  get magenta(): Styler;
+  get red(): Styler;
+  get strikethrough(): Styler;
+  get underline(): Styler;
+  get white(): Styler;
+  get yellow(): Styler;
+}
+
+declare export class Rainbow {
+  constructor(styleReducer: StyleReducer): this;
+  format(values: Array<string>, ...keys: Array<mixed>): StyledString;
+  get bgBlack(): Styler;
+  get bgBlue(): Styler;
+  get bgCyan(): Styler;
+  get bgGreen(): Styler;
+  get bgMagenta(): Styler;
+  get bgRed(): Styler;
+  get bgWhite(): Styler;
+  get bgYellow(): Styler;
+  get black(): Styler;
+  get blue(): Styler;
+  get bold(): Styler;
+  get cyan(): Styler;
+  get dim(): Styler;
+  get gray(): Styler;
+  get green(): Styler;
+  get hidden(): Styler;
+  get inverse(): Styler;
+  get italic(): Styler;
+  get magenta(): Styler;
+  get red(): Styler;
+  get strikethrough(): Styler;
+  get underline(): Styler;
+  get white(): Styler;
+  get yellow(): Styler;
+}
+
+declare export function ansiStyleReducer(): StyleReducer;

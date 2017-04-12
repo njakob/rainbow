@@ -1,10 +1,9 @@
 /* @flow */
 
-import type { StylerProperties } from './types';
 import StyleNode from './StyleNode';
 import styles from './styles';
 
-export default function createProperties(): StylerProperties {
+export default function createProperties(): any {
   const properties = {};
 
   Object.keys(styles).forEach((key: string) => {
