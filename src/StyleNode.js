@@ -3,27 +3,27 @@
 import type { Style } from './types';
 
 export default class StyleNode {
+  children: Array<StyleNode>;
   style: Style;
-  text: ?string;
+  value: mixed;
 
   constructor(
-    otherText: ?string = null,
-    otherStyle: Style = {},
+    value: ?mixed,
+    children?: Array<StyleNode> = [],
+    style?: Style = {},
   ) {
-    this.text = otherText;
-    this.style = otherStyle;
+    this.value = value;
+    this.children = children;
+    this.style = style;
   }
 
   assignStyle(other: Style): this {
-    this.style = {
-      ...this.style,
-      ...other,
-    };
+    this.style = { ...this.style, ...other };
     return this;
   }
 
-  setText(other: string): this {
-    this.text = other;
+  appendChild(node: StyleNode): this {
+    this.children.push(node);
     return this;
   }
 }

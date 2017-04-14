@@ -15,18 +15,19 @@ export type StyledString = {
   value: string;
 };
 
-export type StyleReducer = (styled: StyledString, value: mixed) => StyledString;
+export type StyleFormatter = (styled: StyledString, node: StyleNode) => StyledString;
 
 declare export class StyleNode {
+  children: Array<StyleNode>;
   style: Style;
-  text: ?string;
-  constructor(otherText?: ?string, otherStyle?: Style): this;
-  assignStyle(other: Style): this;
-  setText(other: string): this;
+  value: ?mixed;
+  constructor(value: ?mixed, children?: Array<StyleNode>, style?: Style): this;
+  assignStyle(style: Style): this;
+  appendChild(node: StyleNode): this;
 }
 
 export interface Styler {
-  (value: string): StyleNode;
+  (strings: Array<string>, ...values: Array<mixed>): StyleNode;
   get bgBlack(): Styler;
   get bgBlue(): Styler;
   get bgCyan(): Styler;
@@ -54,8 +55,8 @@ export interface Styler {
 }
 
 declare export class Rainbow {
-  constructor(styleReducer: StyleReducer): this;
-  format(values: Array<string>, ...keys: Array<mixed>): StyledString;
+  constructor(formatter: StyleFormatter): this;
+  format(strings: Array<string>, ...values: Array<mixed>): StyledString;
   get bgBlack(): Styler;
   get bgBlue(): Styler;
   get bgCyan(): Styler;
@@ -82,4 +83,4 @@ declare export class Rainbow {
   get yellow(): Styler;
 }
 
-declare export function ansiStyleReducer(): StyleReducer;
+declare export function ansiStyleFormatter(): StyleFormatter;

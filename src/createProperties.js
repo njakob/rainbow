@@ -2,6 +2,7 @@
 
 import StyleNode from './StyleNode';
 import styles from './styles';
+import parse from './parse';
 
 export default function createProperties(): any {
   const properties = {};
@@ -10,8 +11,8 @@ export default function createProperties(): any {
     function builder(node: StyleNode = new StyleNode()): Function {
       node.assignStyle(styles[key]);
 
-      function fn(value: string): StyleNode {
-        return node.setText(value);
+      function fn(strings: Array<string>, ...values: Array<mixed>): StyleNode {
+        return parse(node, strings, values);
       }
 
       fn.node = node;

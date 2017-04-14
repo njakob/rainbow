@@ -1,18 +1,20 @@
 /* @flow */
 
-import type { StyleReducer, StyledString } from './types';
+import type { StyleFormatter, StyledString } from './types';
+import StyleNode from './StyleNode';
 import createProperties from './createProperties';
 import parse from './parse';
 
 export default class Rainbow {
-  styleReducer: StyleReducer;
+  formatter: StyleFormatter;
 
-  constructor(styleReducer: StyleReducer) {
+  constructor(formatter: StyleFormatter) {
     Object.defineProperties(this, createProperties());
-    this.styleReducer = styleReducer;
+    this.formatter = formatter;
   }
 
-  format(values: Array<string>, ...keys: Array<mixed>): StyledString {
-    return parse(values, keys, this.styleReducer);
+  format(strings: Array<string>, ...values: Array<mixed>): StyledString {
+    const styled: StyledString = { value: '', attributes: [] };
+    return this.formatter(styled, parse(new StyleNode(), strings, values));
   }
 }

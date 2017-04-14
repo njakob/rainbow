@@ -44,4 +44,4 @@ export type Styles = {
   underline: Style;
 };
 
-export type StyleReducer = (styled: StyledString, value: mixed) => StyledString;
+export type StyleFormatter = (styled: StyledString, node: StyleNode) => StyledString;
