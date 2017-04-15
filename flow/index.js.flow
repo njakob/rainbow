@@ -56,7 +56,7 @@ export interface Styler {
 
 declare export class Rainbow {
   constructor(formatter: StyleFormatter): this;
-  parse(strings: Array<string>, ...values: Array<mixed>): StyledString;
+  parse(strings: Array<string>, ...values: Array<mixed>): StyleNode;
   format(node: StyleNode): StyledString;
   get bgBlack(): Styler;
   get bgBlue(): Styler;
