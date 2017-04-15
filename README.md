@@ -1,7 +1,7 @@
 
 # rainbow [![NPM version][npm-status-image]][npm] [![Build Status][build-status-image]][travis] [![ESLint Config][eslint-config-image]][github:eslint-config]
 
-> String styling helpers based on [Chalk][github:chalk].
+> String styling helpers inspired by [Chalk][github:chalk].
 
 ## Installation
 
@@ -26,7 +26,8 @@ import { Rainbow, ansiStyleFormatter } from '@njakob/Rainbow';
 
 const styles = new Rainbow(ansiStyleFormatter);
 
-const styledString = styles.format`Stuff to ${styles.red`log`} with some ${styles.bold.blue`colors`}`;
+const styleNode = styles.parse`Stuff to ${styles.red`log`} with some ${styles.bold.blue`colors`}`;
+const styledString = styles.format(styleNode);
 
 console.log(styledString.value);
 process.stdout.write(`${styledString.value}\n`);
@@ -34,42 +35,41 @@ process.stdout.write(`${styledString.value}\n`);
 
 #### Colors
 
-* `` styles.format`${styles.black`black`}` ``
-* `` styles.format`${styles.red`red`}` ``
-* `` styles.format`${styles.green`green`}` ``
-* `` styles.format`${styles.yellow`yellow`}` ``
-* `` styles.format`${styles.blue`blue`}` ``
-* `` styles.format`${styles.cyan`cyan`}` ``
-* `` styles.format`${styles.magenta`magenta`}` ``
-* `` styles.format`${styles.white`white`}` ``
-* `` styles.format`${styles.gray`gray`}` ``
+* `` styles.parse`${styles.black`black`}` ``
+* `` styles.parse`${styles.red`red`}` ``
+* `` styles.parse`${styles.green`green`}` ``
+* `` styles.parse`${styles.yellow`yellow`}` ``
+* `` styles.parse`${styles.blue`blue`}` ``
+* `` styles.parse`${styles.cyan`cyan`}` ``
+* `` styles.parse`${styles.magenta`magenta`}` ``
+* `` styles.parse`${styles.white`white`}` ``
+* `` styles.parse`${styles.gray`gray`}` ``
 
 #### Backgrounds
 
-* `` styles.format`${styles.bgBlack`black`}` ``
-* `` styles.format`${styles.bgRed`red`}` ``
-* `` styles.format`${styles.bgGreen`green`}` ``
-* `` styles.format`${styles.bgYellow`yellow`}` ``
-* `` styles.format`${styles.bgBlue`blue`}` ``
-* `` styles.format`${styles.bgCyan`cyan`}` ``
-* `` styles.format`${styles.bgMagenta`magenta`}` ``
-* `` styles.format`${styles.bgWhite`white`}` ``
+* `` styles.parse`${styles.bgBlack`black`}` ``
+* `` styles.parse`${styles.bgRed`red`}` ``
+* `` styles.parse`${styles.bgGreen`green`}` ``
+* `` styles.parse`${styles.bgYellow`yellow`}` ``
+* `` styles.parse`${styles.bgBlue`blue`}` ``
+* `` styles.parse`${styles.bgCyan`cyan`}` ``
+* `` styles.parse`${styles.bgMagenta`magenta`}` ``
+* `` styles.parse`${styles.bgWhite`white`}` ``
 
 #### Modifiers
 
-* `` styles.format`${styles.bold`bold`}` ``
-* `` styles.format`${styles.dim`dim`}` ``
-* `` styles.format`${styles.italic`italic`}` ``
-* `` styles.format`${styles.inverse`inverse`}` ``
-* `` styles.format`${styles.hidden`hidden`}` ``
-* `` styles.format`${styles.strikethrough`strikethrough`}` ``
-* `` styles.format`${styles.underline`underline`}` ``
+* `` styles.parse`${styles.bold`bold`}` ``
+* `` styles.parse`${styles.dim`dim`}` ``
+* `` styles.parse`${styles.italic`italic`}` ``
+* `` styles.parse`${styles.inverse`inverse`}` ``
+* `` styles.parse`${styles.hidden`hidden`}` ``
+* `` styles.parse`${styles.strikethrough`strikethrough`}` ``
+* `` styles.parse`${styles.underline`underline`}` ``
 
 ### Flowtype
 
 In order for Flowtype to correctly parse the definition, the following option
 must be added to your `.flowconfig`.
-
 
 ```
 [options]

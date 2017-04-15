@@ -13,8 +13,12 @@ export default class Rainbow {
     this.formatter = formatter;
   }
 
-  format(strings: Array<string>, ...values: Array<mixed>): StyledString {
+  parse(strings: Array<string>, ...values: Array<mixed>): StyleNode {
+    return parse(new StyleNode(), strings, values);
+  }
+
+  format(node: StyleNode): StyledString {
     const styled: StyledString = { value: '', attributes: [] };
-    return this.formatter(styled, parse(new StyleNode(), strings, values));
+    return this.formatter(styled, node);
   }
 }
