@@ -1,5 +1,5 @@
 
-# rainbow [![NPM version][npm-status-image]][npm] [![Build Status][build-status-image]][travis] [![ESLint Config][eslint-config-image]][github:eslint-config]
+# rainbow [![NPM version][npm-status-image]][npm] [![Build Status][build-status-image]][travis] [![ESLint Config][eslint-config-image]][github:eslint-config] [![Conventional Commits][badge:conventional-commits]][conventional-commits]
 
 > String styling helpers inspired by [Chalk][github:chalk].
 
@@ -85,6 +85,8 @@ unsafe.enable_getters_and_setters=true
 [github:chalk]: https://github.com/chalk/chalk
 [npm]: https://nodei.co/npm/@njakob/rainbow
 [travis]: https://travis-ci.org/njakob/rainbow
+[conventional-commits]: https://conventionalcommits.org
 [npm-status-image]: https://img.shields.io/npm/v/@njakob/rainbow.svg
 [build-status-image]: https://travis-ci.org/njakob/rainbow.svg?branch=master
 [eslint-config-image]: https://img.shields.io/badge/eslint_config-njakob-463fd4.svg
+[badge:conventional-commits]: https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg
