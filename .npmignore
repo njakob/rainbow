@@ -1,6 +1,7 @@
 src/
 flow/
 .babelrc
+.commithash
 .editorconfig
 .eslintignore
 .eslintrc
