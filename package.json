@@ -5,10 +5,7 @@
   "author": "Nicolas Jakob <nicow.jakob@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/njakob/rainbow",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/njakob/rainbow.git"
-  },
+  "repository": "njakob/rainbow",
   "bugs": {
     "url": "https://github.com/njakob/rainbow/issues"
   },
