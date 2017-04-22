@@ -76,10 +76,15 @@ must be added to your `.flowconfig`.
 unsafe.enable_getters_and_setters=true
 ```
 
+## Changelog
+
+See [changelog][CHANGELOG].
+
 ## Licences
 
 `njakob/rainbow` is licensed under the [MIT License][licence].
 
+[changelog]: CHANGELOG
 [licence]: LICENSE
 [github:eslint-config]: https://github.com/njakob/eslint-config
 [github:chalk]: https://github.com/chalk/chalk
