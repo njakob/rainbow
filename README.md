@@ -84,7 +84,7 @@ See [changelog][CHANGELOG].
 
 `njakob/rainbow` is licensed under the [MIT License][licence].
 
-[changelog]: CHANGELOG
+[changelog]: CHANGELOG.md
 [licence]: LICENSE
 [github:eslint-config]: https://github.com/njakob/eslint-config
 [github:chalk]: https://github.com/chalk/chalk
