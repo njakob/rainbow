@@ -10,7 +10,7 @@ const parcel = parseParcel(pkg);
 
 const commitHash = (() => {
   try {
-    return fs.readFileSync('.commithash', 'utf-8');
+    return fs.readFileSync('.commithash', 'utf-8').trim();
   } catch (err) {
     return 'unknown';
   }
