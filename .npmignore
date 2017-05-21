@@ -7,4 +7,5 @@ flow/
 .eslintrc
 .flowconfig
 .travis.yml
+rollup.config.js
 yarn.lock
