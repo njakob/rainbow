@@ -1,12 +1,12 @@
-import * as fs from 'fs';
-import { parseParcel } from '@njakob/parcel';
-import { hulk } from '@njakob/hulk';
-import rollupNodeResolve from 'rollup-plugin-node-resolve';
-import rollupBabel from 'rollup-plugin-babel';
-import rollupJSON from 'rollup-plugin-json';
+const fs = require('fs');
+const parcel = require('@njakob/parcel');
+const hulk = require('@njakob/hulk');
+const rollupNodeResolve = require('rollup-plugin-node-resolve');
+const rollupBabel = require('rollup-plugin-babel');
+const rollupJSON = require('rollup-plugin-json');
 
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
-const parcel = parseParcel(pkg);
+const parcelData = parcel.parseParcel(pkg);
 
 const commitHash = (() => {
   try {
@@ -16,11 +16,11 @@ const commitHash = (() => {
   }
 })();
 
-const banner = hulk({
+const banner = hulk.hulk({
   commitHash,
-  name: parcel.name.name,
-  version: parcel.version,
-  repository: parcel.homepage,
+  name: parcelData.name.name,
+  version: parcelData.version,
+  repository: parcelData.homepage,
 });
 
 export default {

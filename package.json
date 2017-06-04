@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@njakob/hulk": "^2.0.0",
-    "@njakob/parcel": "^1.1.1",
+    "@njakob/parcel": "^1.3.1",
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.2.1",
     "babel-plugin-external-helpers": "^6.22.0",
