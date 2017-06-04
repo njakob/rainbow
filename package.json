@@ -61,7 +61,7 @@
     "eslint-config-njakob": "^4.3.0",
     "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-import": "^2.2.0",
-    "flow-bin": "^0.44.2",
+    "flow-bin": "^0.47.0",
     "rimraf": "^2.5.4",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
